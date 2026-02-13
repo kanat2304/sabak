@@ -518,43 +518,275 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
         @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .hero {
+                padding: 40px 15px;
+            }
+            
             .hero h1 {
                 font-size: 2em;
+                line-height: 1.3;
+            }
+            
+            .hero h1 br {
+                display: none;
             }
             
             .hero p {
                 font-size: 1em;
+                padding: 0 10px;
+            }
+            
+            .ai-icons {
+                gap: 12px;
+                margin-top: 30px;
+            }
+            
+            .ai-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5em;
+                border-radius: 15px;
+            }
+            
+            /* Mobile Navigation */
+            .nav-container {
+                padding: 10px;
+                position: relative;
             }
             
             .nav {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 10px;
+                padding-bottom: 5px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            
+            .nav::-webkit-scrollbar {
+                display: none;
             }
             
             .nav a {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
+                padding: 10px 15px;
+                font-size: 0.85em;
+                white-space: nowrap;
+                flex-shrink: 0;
+                border-radius: 25px;
+            }
+            
+            .nav a i {
+                font-size: 1em;
+                margin-right: 5px;
+            }
+            
+            main {
+                padding: 30px 15px;
+            }
+            
+            .category {
+                margin-bottom: 50px;
             }
             
             .category-header {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+            
+            .category-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+            
+            .category-header h2 {
+                font-size: 1.3em;
+                line-height: 1.4;
+            }
+            
+            .category-number {
+                display: none;
             }
             
             .tools-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .ai-icons {
                 gap: 15px;
             }
             
+            .tool-card {
+                padding: 20px;
+                border-radius: 20px;
+            }
+            
+            .tool-number {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9em;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .tool-card h3 {
+                font-size: 1.2em;
+                padding-right: 50px;
+            }
+            
+            .tool-card p {
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+            
+            .tag {
+                padding: 5px 10px;
+                font-size: 0.75em;
+            }
+            
+            /* Always show visit button on mobile */
+            .visit-btn {
+                opacity: 1;
+                transform: translateY(0);
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+            }
+            
+            footer {
+                padding: 30px 15px;
+            }
+            
+            footer h3 {
+                font-size: 1.2em;
+            }
+            
+            footer p {
+                font-size: 0.9em;
+            }
+            
+            .footer-icons {
+                gap: 15px;
+            }
+            
+            .footer-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2em;
+            }
+            
+            /* Reduce animations on mobile for performance */
+            .particle {
+                display: none;
+            }
+            
             .ai-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8em;
+                animation: bounce 3s ease infinite;
+            }
+            
+            .category-icon {
+                animation: none;
+            }
+            
+            .tool-card::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 13px;
+            }
+            
+            .hero {
+                padding: 30px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6em;
+            }
+            
+            .hero p {
+                font-size: 0.9em;
+            }
+            
+            .ai-icons {
+                gap: 10px;
+            }
+            
+            .ai-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3em;
+            }
+            
+            .nav a {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+            
+            .nav a i {
+                font-size: 0.9em;
+            }
+            
+            main {
+                padding: 20px 10px;
+            }
+            
+            .category-header h2 {
+                font-size: 1.1em;
+            }
+            
+            .tool-card {
+                padding: 15px;
+            }
+            
+            .tool-card h3 {
+                font-size: 1.1em;
+            }
+            
+            .tool-card p {
+                font-size: 0.85em;
+            }
+        }
+        
+        /* Touch device improvements */
+        @media (hover: none) {
+            .tool-card:hover {
+                transform: none;
+            }
+            
+            .tool-card:active {
+                transform: scale(0.98);
+            }
+            
+            .nav a:active {
+                transform: scale(0.95);
+            }
+            
+            .ai-icon:active {
+                transform: scale(0.9);
+            }
+            
+            .footer-icon:active {
+                transform: scale(0.9);
             }
         }
 
